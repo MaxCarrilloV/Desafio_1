@@ -12,6 +12,7 @@ body {
   padding: 0;
 }
 
+
 #title-section {
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ body {
   border-bottom: 1px solid #4d556233;
   width: 100%;
   color: #4d5562;
+  background-image: "/bg-pattern.png";
 }
 
 #table-section {
@@ -38,11 +40,11 @@ table {
 }
 th {
   color: #263fa9;
-  padding: 20px 40px 40px 40px;
+  padding: 20px 2vw 40px 2vw;
 }
 
 td {
-  padding: 15px;
+  padding: 2vw;
   border-bottom: 1px solid #4d556233;
   text-align: center;
   font-weight: 400;
@@ -70,7 +72,7 @@ td {
 }
 
 button {
-  color: #263fa9;
+  color: #263FA9;
   font-weight: bold;
   font-size: 17px;
   background: none;
@@ -117,51 +119,95 @@ button:hover {
 #popular {
   background-color: #263fa9;
   border-radius: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 20px 0 20px;
 }
 
 #table-section-responsive{
     display: none;
 }
 
-@media (max-width: 1050px) {
-  #table-section {
-    display: none;
+@media (max-width: 1024px) {
+
+  .title {
+    font-size: 5vw;
   }
 
-  #table-section-responsive {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    margin-right: 5px;
-    margin-left: 5px;
-    overflow: auto;
+  #title-section {
+    font-size: 3vw;
+  }
+
+  .view {
+    display: none;
+  }
+  .price{
+    font-size: 5vw;
+  }
+  button{
+    font-size: 1.8vw;
+  }
+
+  th {
+    padding: 20px 1vw 40px 1vw;
+    max-width: 20vw;
+    font-size: 2vw;
+  }
+  
+  td {
+    padding: 1vw;
+    max-width: 20vw;
+    font-size: 2vw;
+  }
+  #popular {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
+  .prop {
+    padding-right: 5vw;
+    white-space: nowrap;
+    font-size: 2vw;
   }
 }
 /*Tamaño de pantalla 700px maximo */
-@media (max-width: 700px) {
-  #table-section {
+@media (max-width: 640px) {
+  .view-menor {
     display: none;
   }
 
-  #table-section-responsive {
-    margin-top: 10px;
+  #table-section {
     display: block;
-    margin-right: 5px;
-    margin-left: 5px;
-    overflow: auto;
-  }
-  .per {
-    padding-right: 2px;
-  }
-  th {
-    padding: 5px 20px 20px 20px;
+    margin-left: 18vw;
+
   }
 
-  td {
-    padding: 7px;
+  table tbody tr {
+    display: grid;
+    grid-template-columns: 56% 50% 60%; /* Tres columnas */
+    gap: 0;
+  }
+
+  table tbody tr td:nth-child(3) {
+    order: 2; /* Segunda columna */
+  }
+
+  table tbody tr td:nth-child(4) {
+    order: 1; /* Tercera columna: aparece antes */
+  }
+
+  table thead tr {
+    display: grid;
+    grid-template-columns: 56% 50% 60%;
+    gap: 0;
+  }
+
+  table thead th:nth-child(3) {
+    order: 2;
+  }
+
+  table thead th:nth-child(4) {
+    order: 1;
+  }
+  .per{
+    font-size: 2vw;
   }
 }
